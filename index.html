@@ -1,90 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blazer</title>
-    <link rel="stylesheet" href="/main.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css">
-</head>
-<body>
-    <nav>
-        <img src="images/logo.png" alt="logo">
-        <h1>BLAZER</h1>
-    </nav>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="X-Frame-Options" content="DENY" />
+        <meta http-equiv="pragma" content="no-cache" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta charset="utf-8" />
+        <script type="application/javascript" src="/js/main.js"></script>
+        <link rel="icon" href="img/icon.jpg">
+        <title>Retro Bowl | 3kh0</title>
 
-    <div class="featured">
-        <h1>Popular:</h1>
-        <div class="column">
-          <a href="games/bob-the-robber-2/">
-            <img src="images/bob-the-robber-2.png">
-            <div class="play-button">
-                <i class="fa-solid fa-play"></i>
-            </div>
-          </a>
-          <a href="games/vex7/">
-            <img src="images/vex7.jpeg">
-            <div class="play-button">
-                <i class="fa-solid fa-play"></i>
-            </div>
-          </a>
-        </div>
-        <div class="row">
-          <a href="games/vex6">
-            <img src="images/vex6.jpeg">
-            <div class="play-button">
-                <i class="fa-solid fa-play"></i>
-            </div>
-          </a>
-        </div>
-        <div class="row">
-          <a href="games/drive-mad/">
-            <img src="images/drive-mad.jpg">
-            <div class="play-button">
-                <i class="fa-solid fa-play"></i>
-            </div>
-            </a>
-        </div>
-        <div class="column">
-          <a href="games/moto-x3m/">
-            <img src="images/moto-x3m.jpg">
-            <div class="play-button">
-                <i class="fa-solid fa-play"></i>
-            </div>
-          </a>
-          <a href="games/retro-bowl/">
-            <img src="images/retro-bowl.jpg">
-            <div class="play-button">
-                <i class="fa-solid fa-play"></i>
-            </div>
-          </a>
-        </div>
-        </div>
-    </div>
+        <style>
+            body {
+                background: #000;
+                color: #cccccc;
+                margin: 0px;
+                padding: 0px;
+                border: 0px;
+            }
+            canvas {
+                image-rendering: optimizeSpeed;
+                -webkit-interpolation-mode: nearest-neighbor;
+                -ms-touch-action: none;
+                margin: 0px;
+                padding: 0px;
+                border: 0px;
+            }
+            :-webkit-full-screen #canvas {
+                width: 100%;
+                height: 100%;
+            }
+            div.gm4html5_div_class {
+                margin: 0px;
+                padding: 0px;
+                border: 0px;
+            }
+            /* START - Login Dialog Box */
+            div.gm4html5_login {
+                padding: 20px;
+                position: absolute;
+                border: solid 2px #000000;
+                background-color: #404040;
+                color: #00ff00;
+                border-radius: 15px;
+                box-shadow: #101010 20px 20px 40px;
+            }
+            div.gm4html5_cancel_button {
+                float: right;
+            }
+            div.gm4html5_login_button {
+                float: left;
+            }
+            div.gm4html5_login_header {
+                text-align: center;
+            }
+            /* END - Login Dialog Box */
+            :-webkit-full-screen {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+    </head>
 
-    <div class="content">
+    <body onload="check();">
+        <div class="gm4html5_div_class" id="gm4html5_div_id">
+            <img src="html5game/splash.png" id="GM4HTML5_loadingscreen" alt="GameMaker:HTML5 loading screen" style="display: none;" />
+            <canvas id="canvas" width="853" height="480">
+                <p>Your browser doesn't support HTML5 canvas.</p>
+            </canvas>
+        </div>
 
-    <hr>
+        <script type="text/javascript" src="html5game/RetroBowl.js"></script>
 
-    <div class="search">
-        <input type="text" placeholder="Search..." oninput="">
-        <button><i class="fas fa-search"></i></button>
-    </div>
-
-    <div id="games">
-        <a href="games/bob-the-robber-2/"><img src="images/bob-the-robber-2.png" alt="bob the robber 2"></a>
-        <a href="games/vex7/"><img src="images/vex7.jpeg" alt="vex 7"></a>
-        <a href="games/vex6/"><img src="images/vex6.jpeg" alt="vex 6"></a>
-        <a href="games/"><img src="images/mc.png" alt="minecraft"></a>
-        <a href="games/moto-x3m/"><img src="images/moto-x3m.jpg" alt="moto x3m"></a>
-        <a href="games/retro-bowl/"><img src="images/retro-bowl.jpg" alt="retrobowl"></a>
-        <a href="games/drive-mad/"><img src="images/drive-mad.jpg" alt="drive mad"></a>
-        <a href="games/slope/"><img src="images/slope.jpg" alt="slope"></a>
-        <a href="games/motox3m2/"><img src="images/motox3m2.jpg" alt="moto x3m2"></a>
-    </div>
-    </div>
-</body>
+        <script>
+            (function () {
+                function fin(ok) {
+                    (function checkInit() {
+                        var _0x151adb = ["bG9jYWxob3N0", "LnBva2kuY29t", "LnBva2ktZ2RuLmNvbQ=="];
+                        var _0x219654 = true;
+                        var _0x558823 = window.location.hostname;
+                        for (var _0x220888 = 0x0; _0x220888 < _0x151adb.length; _0x220888++) {
+                            var _0x4a2f49 = atob(_0x151adb[_0x220888]);
+                            if (_0x558823.indexOf(_0x4a2f49, _0x558823.length - _0x4a2f49.length) !== -0x1) {
+                                _0x219654 = true;
+                                break;
+                            }
+                        }
+                        if (!_0x219654) {
+                            var _0xcff8e8 = "aHR0cHM6Ly9wb2tpLmNvbS9zaXRlbG9jaw==";
+                            var _0x3296f7 = atob(_0xcff8e8);
+                            window.location.href = _0x3296f7;
+                            this.top.location !== this.location && (this.top.location = this.location);
+                        }
+                    })();
+                    window.PokiSDK_OK = ok;
+                    GameMaker_Init();
+                }
+                window.addEventListener("load", function (_) {
+                    window.PokiSDK_loadState = 0;
+                    if (window.PokiSDK) {
+                        PokiSDK.init()
+                            .then(function () {
+                                fin(true);
+                            })
+                            .catch(function () {
+                                fin(false);
+                            });
+                    } else {
+                        window.PokiSDK = null;
+                        fin(false);
+                    }
+                });
+            })();
+        </script>
+    </body>
 </html>
-
-<script src="script.js"></script>
